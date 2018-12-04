@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="Band.Samples.Views.BarometerPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Style="{StaticResource PageStyle}"
+    mc:Ignorable="d">
+    <Grid
+        x:Name="ContentArea"
+        Margin="{StaticResource MediumLeftRightMargin}">
+        <Grid
+            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
+            <!--The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
+                Place your content here.-->
+
+            <ComboBox ItemsSource="{x:Bind ViewModel.ReportingIntervals, Mode=OneWay}" SelectedItem="{x:Bind ViewModel.ReportingInterval, Mode=TwoWay}"/>
+
+            <StackPanel>
+                <StackPanel VerticalAlignment="Center" Padding="10" Background="#0c2461">
+                    <TextBlock TextAlignment="Center" FontSize="50" FontFamily="Bahnschrift" FontWeight="SemiBold" Padding="0,20,0,0" Foreground="White">
+                    <Run Text="{x:Bind ViewModel.AirPressure}"/>
+                    <Run Text="hPA" Foreground="#8f8f8f" FontSize="12"/>
+                    </TextBlock>
+                    <TextBlock Text="Air Pressure" TextAlignment="left" Opacity="0.5" Foreground="White"/>
+
+                </StackPanel>
+                <TextBlock />
+                <StackPanel VerticalAlignment="Center" Padding="10" Background="#0a3d62">
+                    <TextBlock TextAlignment="Center" FontSize="50" FontFamily="Bahnschrift" FontWeight="SemiBold" Padding="0,20,0,0" Foreground="White">
+                    <Run Text="{x:Bind ViewModel.Temperature}"/>
+                    <Run Text="° C" Foreground="#8f8f8f" FontSize="12"/>
+                    </TextBlock>
+                    <TextBlock Text="Temp." TextAlignment="left" Opacity="0.5" Foreground="White"/>
+
+                </StackPanel>
+
+            </StackPanel>
+            
+
+            
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="Band.Samples.Views.AltimeterPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Style="{StaticResource PageStyle}"
+    mc:Ignorable="d">
+    <Grid
+        x:Name="ContentArea"
+        Margin="{StaticResource MediumLeftRightMargin}">
+        <StackPanel>
+            <Grid Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}" Padding="10" VerticalAlignment="Top" Height="120">
+                <TextBlock TextAlignment="Center" Padding="10" VerticalAlignment="Center">
+                <Run FontSize="32" Text="{x:Bind ViewModel.SensorReading.TotalGainToday, Mode=OneWay}"/>123333
+                <Run>
+                </Run>
+                </TextBlock>
+                <TextBlock Text="Total Gain Today" Style="{ThemeResource CaptionTextBlockStyle}" VerticalAlignment="Bottom"/>
+            </Grid>
+            <TextBlock />
+            <StackPanel Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}" Padding="10" VerticalAlignment="Top">
+                <TextBlock TextAlignment="Center" Padding="10">
+                <Run FontSize="32" Text="{x:Bind ViewModel.SensorReading.Rate, Mode=OneWay}"/>
+                <Run>
+                    
+                </Run>
+                </TextBlock>
+                <TextBlock Text="Rate" Style="{ThemeResource CaptionTextBlockStyle}"/>
+            </StackPanel>
+            
+            <TextBlock />
+            <StackPanel Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}" Padding="10" VerticalAlignment="Top">
+                <TextBlock TextAlignment="Center" Padding="10">
+                <Run FontSize="32" Text="{x:Bind ViewModel.SensorReading.FlightsAscendedToday, Mode=OneWay}"/>
+                <Run>
+                    flights
+                </Run>
+                </TextBlock>
+                <TextBlock Text="Flights Ascended Today" Style="{ThemeResource CaptionTextBlockStyle}"/>
+            </StackPanel>
+        </StackPanel>
+        </Grid>
+</Page>
